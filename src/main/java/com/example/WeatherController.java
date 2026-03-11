@@ -12,6 +12,11 @@ import java.io.IOException;
 @RestController
 public class WeatherController {
 
+    @GetMapping("/")
+    public String start() {
+        return "OK";
+    }
+
     @GetMapping("/api/v1/weather-in-city")
     public WeatherResponse weatherInCity(@RequestParam(required = false) String query, HttpServletRequest httpServletRequest) {
         String q = query;
